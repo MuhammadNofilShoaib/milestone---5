@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="resume-container">
+        <form id="resumeForm">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="photo">Upload Photo:</label>
+                <input type="file" id="photo" accept="image/*">
+                <p id="photoMessage"></p>
+                <label for="education">Education:</label>
+                <textarea id="education" rows="4" required></textarea>
+                <label for="experience">Work Experience:</label>
+                <textarea id="experience" rows="4" required></textarea>
+                <label for="skills">Skills:</label>
+                <textarea id="skills" rows="4" required></textarea>
+                <button type="button" id="generateResume">Generate Resume</button>
+                <button type="button" id="saveResume">Save Resume</button>
+                <button type="button" id="downloadPDF">Download PDF</button>
+            </fieldset>
+        </form>
+        <div id="resumeOutput" class="resume-output">
+            <img id="resumePhoto" class="resume-photo" src="" alt="Resume Photo" style="display:none;">
+            <h2>Personal Details</h2>
+            <p id="resumeName"></p>
+            <p id="resumeEmail"></p>
+            <h2>Education</h2>
+            <p id="resumeEducation"></p>
+            <h2>Work Experience</h2>
+            <p id="resumeExperience"></p>
+            <h2>Skills</h2>
+            <p id="resumeSkills"></p>
+            <p id="shareLinkMessage"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
