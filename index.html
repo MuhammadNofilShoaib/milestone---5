@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,8 +20,8 @@
                 <input type="text" id="name" required>
                 <label for="email">Email:</label>
                 <input type="email" id="email" required>
-                <label for="photo">Upload Photo:</label>
-                <input type="file" id="photo" accept="image/*">
+                <label for="photo" id="upload-label">Upload Photo</label>
+                <input type="file" id="photo" accept="image/*" style="display: none;">
                 <p id="photoMessage"></p>
                 <label for="education">Education:</label>
                 <textarea id="education" rows="4" required></textarea>
@@ -28,7 +29,7 @@
                 <textarea id="experience" rows="4" required></textarea>
                 <label for="skills">Skills:</label>
                 <textarea id="skills" rows="4" required></textarea>
-                <button type="button" id="generateResume">Generate Resume</button>
+                <button type="button" id="generateResume">Generate Resume</button>   
                 <button type="button" id="saveResume">Save Resume</button>
                 <button type="button" id="downloadPDF">Download PDF</button>
             </fieldset>
