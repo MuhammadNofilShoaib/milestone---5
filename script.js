@@ -3,13 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const resumeOutput = document.getElementById('resumeOutput');
     const shareLinkMessage = document.getElementById('shareLinkMessage');
     
-    // Helper function to get query parameters
     function getQueryParam(param) {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get(param);
     }
 
-    // Generate Resume Button
     document.getElementById('generateResume').addEventListener('click', () => {
         const username = document.getElementById('username').value;
         const name = document.getElementById('name').value;
@@ -41,11 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const uniqueURL = `${window.location.origin}${window.location.pathname}?username=${encodeURIComponent(username)}`;
         shareLinkMessage.innerHTML = `Your resume is available at: <a href="${uniqueURL}" target="_blank">${uniqueURL}</a>`;
 
-        // Show the resume output
         resumeOutput.style.display = 'block';
     });
 
-    // Save Resume Button
     document.getElementById('saveResume').addEventListener('click', () => {
         const resumeData = {
             name: document.getElementById('name').value,
@@ -60,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('Resume saved locally!');
     });
 
-    // Download PDF Button
     document.getElementById('downloadPDF').addEventListener('click', () => {
         const doc = new jspdf.jsPDF();
         const name = document.getElementById('resumeName').innerText;
@@ -78,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
         doc.save('resume.pdf');
     });
 
-    // Load Resume if "username" param is present
     const loadedUsername = getQueryParam('username');
     if (loadedUsername) {
         const storedResume = localStorage.getItem(loadedUsername);
